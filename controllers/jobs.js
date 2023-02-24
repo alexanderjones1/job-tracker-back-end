@@ -20,7 +20,6 @@ async function index(req, res) {
 }
 
 async function update(req, res) {
-  console.log("REQ.PARAMS HERE >>>>>>", req.params.id);
   try {
     const job = await Job.findByPk(req.params.id)
     job.set(req.body)
@@ -31,8 +30,19 @@ async function update(req, res) {
   }
 }
 
+async function deleteJob(req, res) {
+  try {
+    const job = await Job.findByPk(req.params.id)
+    await job.destroy()
+    res.status(200).json(job)
+  }catch (error) {
+    res.status(500).json(error)
+  }
+}
+
 module.exports = {
   create,
   index,
   update,
+  delete: deleteJob,
 }

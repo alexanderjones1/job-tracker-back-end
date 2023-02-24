@@ -13,6 +13,7 @@ router.use(decodeUserFromToken)
 router.get('/', checkAuth, jobsCtrl.index)
 router.post('/', checkAuth, jobsCtrl.create)
 router.put('/:id', checkAuth, jobsCtrl.update)
+router.delete('/:id', checkAuth, jobsCtrl.delete)
 
 
 module.exports = router
