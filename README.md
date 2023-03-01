@@ -1,0 +1,1 @@
+##### For more details on the project, visit the [Front-End Github](https://github.com/alexanderjones1/job-tracker-front-end)
